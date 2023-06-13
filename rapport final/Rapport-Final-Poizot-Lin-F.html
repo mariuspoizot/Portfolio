@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapport-Final-Poizot-Lin-F</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__html"><p>Groupe : F5</p>
+<h2 id="rapport">Rapport</h2>
+<h2 id="semaine-6-et-7">Semaine 6 et 7</h2>
+<p>Les 2 premières semaines on a commencé par une installation de machines virtuel classique à la main, on a par la suite répondu à des qiestopns.</p>
+<p>Et nous avons appris a créée un site HTML simplifier pour un rendu plus propre et plus lisible et on peut également créée un Pdf à partir du Md.</p>
+<p>Caractéristiques de la machine</p>
+<ol>
+<li>
+<p>Nom de la machine : sae203</p>
+</li>
+<li>
+<p>Dossier de la machine : <em>/usr/local/virtual_machine/infoetu/login</em></p>
+</li>
+<li>
+<p>Type : Linux</p>
+</li>
+<li>
+<p>Version : Debian 11/64-bit</p>
+</li>
+<li>
+<p>RAM : 2048 Mo (minimum)</p>
+</li>
+<li>
+<p>Disque dur : 20 Go (une seule partition)(minimum)</p>
+</li>
+<li>
+<p>Laisser le reste par défaut</p>
+</li>
+</ol>
+<h2 id="optimisation-de-la-machine-">Optimisation de la machine :</h2>
+<p>Il faut tout d’abord installé VirtualBox avec ses extensions. Les composant minimum pour avoir une machine fluide : <strong>4 go RAM minimum et 20go de disque de stockage.</strong></p>
+<h2 id="caractéristiques-de-la-machine">Caractéristiques de la machine</h2>
+<ol>
+<li>
+<p>Nom de la machine : sae203</p>
+</li>
+<li>
+<p>Dossier de la machine : <em>/usr/local/virtual_machine/infoetu/login</em></p>
+</li>
+<li>
+<p>Type : Linux</p>
+</li>
+<li>
+<p>Version : Debian 11/64-bit</p>
+</li>
+<li>
+<p>RAM : 2048 Mo</p>
+</li>
+<li>
+<p>Disque dur : 20 Go (une seule partition)</p>
+</li>
+</ol>
+<h2 id="création-machine-virtuelle">Création machine virtuelle</h2>
+<blockquote>
+<ol>
+<li>Que signifie “64-bit” dans “Debian 64-bit” ?</li>
+</ol>
+</blockquote>
+<p>64-bit signifie que le processeur sera capable de traiter des paquets de 64 bit.</p>
+<p>Donc ici debian 64-bit signifie qu’il est sur un processeurs traitant du 64-bit.</p>
+<blockquote>
+<ol start="2">
+<li>Quelle est la configuration réseau utilisée par défaut ?</li>
+</ol>
+</blockquote>
+<p>Dynamic Host Configuration Protocol (DHCP)</p>
+<blockquote>
+<ol start="3">
+<li>Quel est le nom du fichier XML contenant la configuration de votre machine ?</li>
+</ol>
+</blockquote>
+<p>“sae203.vbox”</p>
+<blockquote>
+<ol start="4">
+<li>Sauriez-vous le modifier directement ce fichier pour mettre 2 processeurs à votre machine ?</li>
+</ol>
+</blockquote>
+<p>Il faut juste aller modifier dans le fichier XML, <code>&lt;CPU count="1"&gt;</code> et le mettre a 2.</p>
+<h2 id="installation-de-los">Installation de l’OS</h2>
+<blockquote>
+<ol>
+<li>Qu’est-ce qu’un fichier iso bootable ?</li>
+</ol>
+</blockquote>
+<p>Les iso bootable sont des formats de fichiers pouvant créer un DVD-ROM et il agit directement sur le disque mais étant donné que c’est une machine virtuelle cela ne sert à l’installation de l’os.</p>
+<blockquote>
+<ol start="2">
+<li>Qu’est-ce que MATE ? GNOME ?</li>
+</ol>
+</blockquote>
+<p>MATE et GNOME sont des interfaces graphiques permettant aux utilisateurs d’être plus à l’aise . MATE est un fork de GNOME,(c’est a dire que MATE à été crée a partir du code source de GNOME).</p>
+<blockquote>
+<ol start="3">
+<li>Qu’est-ce qu’un serveur web ?</li>
+</ol>
+</blockquote>
+<p>Un serveur web est un serveur privé ou public (cela dépend de l’utilisation de ce serveur web), il est donc utile lorsque l’on veut partager des choses avec d’autre personne qui visite le site en question.</p>
+<blockquote>
+<ol start="4">
+<li>Qu’est-ce qu’un serveur ssh ?</li>
+</ol>
+</blockquote>
+<p>SSH est un protocole qui permet de gérer une machine à distance , par exemple pour le télé-travail.</p>
+<blockquote>
+<ol start="5">
+<li>Qu’est-ce qu’un serveur mandataire ?</li>
+</ol>
+</blockquote>
+<p>Le serveur mandataire qui est aussi appelé proxy est un contrôleur d’envoi lors du passage entre l’ordinateur et le réseau et renvoi votre requête.</p>
+<h2 id="préparation-du-système">Préparation du système</h2>
+<h2 id="accès-sudo-pour-user">Accès sudo pour user</h2>
+<blockquote>
+<ol>
+<li>Comment peux-ton savoir à quels groupes appartient l’utilisateur user ?</li>
+</ol>
+</blockquote>
+<p>Il faut regarder dans le terminal et taper : <strong>groups user</strong> pour voir a quel groupe il appartient .</p>
+<h2 id="installation-des-suppléments-invités">Installation des suppléments invités</h2>
+<blockquote>
+<ol start="2">
+<li>Quel est la version du noyau Linux utilisé par votre VM ?</li>
+</ol>
+</blockquote>
+<p>Pour connaitre la version de son noyau Linux utilisé , il faut taper la commande ci-dessous dans un terminal :</p>
+<p>cat /proc/version : 5.10.0-21-amd64</p>
+<blockquote>
+<ol start="3">
+<li>À quoi servent les suppléments invités ? Donner 2 principales raisons de les installer.</li>
+</ol>
+</blockquote>
+<p>Ils servent à une meilleur utilisation pour l’utilisateur, un meilleur échange entre l’utilisateur et la machine et permet de transmettre des fichiers à la machine et la machine virtuelle</p>
+<blockquote>
+<ol start="4">
+<li>À quoi sert la commande “mount” (dans notre cas de figure et dans le cas général) ?</li>
+</ol>
+</blockquote>
+<p>La commande mount permet de monter un disque dur et il permet de le lancer.</p>
+<p><strong>Semaine 9 Installation Débian automatisée</strong></p>
+<p>Création du poste :</p>
+<p>Il faut tout d’abord créer une machine virtual avec les memes prérequis que celle de la semaine 6 c’est a dire :</p>
+<p>• Nom de la machine dans VirtualBox : sae203</p>
+<p>• Dossier de la machine : /usr/local/virtual_machine/infoetu/login</p>
+<p>Bien entendu, login est à remplacer par votre login.</p>
+<p>• Type : Linux</p>
+<p>• Version : Debian ou Debian 11 en 64-bit</p>
+<p>• Mémoire vive (RAM) : 2048 Mo pour être à l’aise à l’usage.</p>
+<p>• Disque dur : 20 Go entier (une seule partition)</p>
+<p>• Laisser le reste par défaut.</p>
+<p>Il faut par la suite prendre le fichier zip sur moodle contenant les fichiers necessaires a l’installation automatique.</p>
+<p>Il faut par la suite aller dans le terminal, dans le répertoire du ficher en question est tapé la commande suivante : sed -i -E “s/(–iprt-iso-maker-file-marker-bourne-sh).*<span class="katex--inline">KaTeX parse error: Undefined control sequence: \1 at position 2: /\̲1̲=</span>(cat/proc/sys/kernel/random/uuid)/” S203-Debian11.viso</p>
+<p>Ensuite il y a quelque petite chose a ajouter dans le ficher pressed-fr.cfg :</p>
+<p>-ligne 56 a la fin ajouter “sudo”</p>
+<p>-ligne 83 a la fin ajouter “mate-desktop”</p>
+<p>-ligne 85 ajouter la ligne de commande “d-i pkgsel/include string git, sqlite3, curl bash-completion, neofetch”</p>
+<p>Enfin vous pouvez terminer en ajouter l’iso “S203-Debian11.viso” dans la machine en version lecteur optique. Et vous pouvez lancer la machine virtual et tout s’installe automatiquement.</p>
+<h2 id="installation-debian-automatisée-par-pré-configuration-semaine-9">Installation Debian automatisée par pré-configuration (Semaine 9)</h2>
+<blockquote>
+<p>Q1. Qu’est-ce que le Projet Debian? D’où vient le nom Debian ?</p>
+</blockquote>
+<p>Le projet Debian est un groupe mondial de volontaires qui font de leurs mieux pour que les logiciels sont en acces libre.</p>
+<p>Le nom Debian vient des prénoms du créateur Ian Murdock et de sa femme Debra. <a href="https://www.debian.org/doc/manuals/project-history/intro.fr.html">Source</a></p>
+<blockquote>
+<p>Q2. Il existe 3 durée de prise en charge(support) de ces versions: la durée minimale, la durée en support long terme (LTS) et la durée en support long terme étendue (ELTS). Quelle sont les durées de ces prises en charge ?</p>
+</blockquote>
+<p>La durée minimale de la prise en charge dee ces version varie en fonction des version.</p>
+<p>La durée de LTS est : 5 ans. <a href="https://www.debian.org/lts/index.fr.html">Source</a></p>
+<p>La durée de ELTS est : 10 ans. <a href="https://wiki.debian.org/LTS/Extended">Source</a></p>
+<blockquote>
+<p>Q3. Pendant combien de temps les mises à jours de sécurité seront-elles fournies ?</p>
+</blockquote>
+<p>Les mises à jours de sécurité sont fournis au bout de 1 ans, après la publication. <a href="https://www.debian.org/security/faq.fr.html#lifespan">Source</a></p>
+<blockquote>
+<p>Q4. Combien de version au minimum sont activement maintenus par Debian? Donnez leur nom générique(= les types de distribution).</p>
+</blockquote>
+<p>Debian a minimum 3 verisons activement maintenus.</p>
+<p>Leurs noms sont: stable, testing, unstable. <a href="https://www.debian.org/releases/index.fr.html">Source</a></p>
+<blockquote>
+<p>Q5. Chaque distribution majeur possède un nom de code différent. Par exemple, la version majeur actuelle (Debain 11) se nomme Bulleye. D’où viennent les noms de code données aux distributions ?</p>
+</blockquote>
+<p>Les noms des versions de Debian proviennent des personnages de Toy Story. <a href="https://wiki.debian.org/fr/DebianReleases#Nom_de_code">Source</a></p>
+<blockquote>
+<p>Q6. L’un des atouts de Debian fut le nombre d’architecture (= processeurs) officiellement prises en charge. Combien et lesquelles sont prises en charge par la version Bulleye ?</p>
+</blockquote>
+<blockquote>
+<p>Debian fonctionne sur 9 architectures</p>
+</blockquote>
+<p>-AMD64 &amp; Intel 64</p>
+<p>-Intel x86-based</p>
+<p>-APM</p>
+<p>-APM avec matériel FPU</p>
+<p>-APM 64 bits</p>
+<p>-MIPS 64 bits</p>
+<p>-MIPS 62 bits</p>
+<p>-Power Systems</p>
+<p>-IBM S/390 64 bits</p>
+<p><a href="https://wiki.debian.org/DebianBullseye">Source</a></p>
+<blockquote>
+<p>Q7. Première version avec un nom de code :</p>
+</blockquote>
+<ul>
+<li>
+<p>Quelle a était le premier nom de code utilisé? Le nom est dselect.</p>
+</li>
+<li>
+<p>Quand a-t-il été annoncé? En mars 1995.</p>
+</li>
+<li>
+<p>Quelle était le numéro de version de cette distribution? Le numéro de version est : 0.9R5.</p>
+</li>
+</ul>
+<p><a href="https://www.debian.org/doc/manuals/project-history/releases.fr.html">Source</a></p>
+<blockquote>
+<p>Q8. Dernière nom de code attribué:</p>
+</blockquote>
+<ul>
+<li>
+<p>Quel est le dernier nom de code annoncé à ce jour? Le nom est Bullseye.</p>
+</li>
+<li>
+<p>Quand a-t-il été annoncé? Le 14 août 2021.</p>
+</li>
+<li>
+<p>Quelle est la version de cette distribution? C’est Debian 11.</p>
+</li>
+</ul>
+<p><a href="https://www.debian.org/doc/manuals/project-history/releases.fr.html">Source</a></p>
+<p><strong>Semaine 10 et 11 Gitea</strong></p>
+<p>Il faut tout d’abord</p>
+<p>git config --global <a href="http://user.name">user.name</a> “Prénom Nom” ①</p>
+<p>git config --global user.email “votre@email” ②</p>
+<p>git config --global init.defaultBranch “master” ③</p>
+<p>sudo apt-get install git-all</p>
+<p>apres il faut aller dans les caracteristqiue de la VM et chnager au niveau du port dans avancer part gitea et mettre les données a 3000 ou il y a des 0</p>
+<p>L’installation de Gitea, il faut taper les commande suivantes dans le terminal:</p>
+<p>-wget -O gitea <a href="https://dl.gitea.com/gitea/1.18.5/gitea-1.18.5-linux-amd64">https://dl.gitea.com/gitea/1.18.5/gitea-1.18.5-linux-amd64</a></p>
+<p>chmod +x gitea</p>
+<p>La mise en fonctionnement du GPG, il faut :</p>
+<p>Téléchargé la clé à “<a href="https://keys.openpgp.org/search?q=teabot%40gitea.io">https://keys.openpgp.org/search?q=teabot%40gitea.io</a>”</p>
+<p>Puis après le télechargement, taper les commandes suivantes dans le termial:</p>
+<p>-gpg --keyserver <a href="http://keys.openpgp.org">keys.openpgp.org</a> --recv 7C9E68152594688862D62AF62D9AE806EC1592E2</p>
+<p>-gpg --verify gitea-1.18.5-linux-amd64.asc gitea-1.18.5-linux-amd64</p>
+<p>Le lancement de Gitea :</p>
+<p>On commence par copié le gitea.sevice donné sur la doc à</p>
+<p>-/etc/systemd/system/gitea.service</p>
+<p>Pour activer gitea au lancemement il faut taper les commandes suivants dans le terminal :</p>
+<p>-sudo systemctl enable gitea</p>
+<p>-sudo systemctl start gitea</p>
+<p>Pour vérifier le fonctionnement de gitea on tape la commande :</p>
+<p>-systemctl status gitea.service</p>
+<p>Et pour finir on créé l’utilisateur “groupe”.</p>
+<p>Voici comment upload un fichier “test”, et donc les commandes à taper dans le terminal :</p>
+<ul>
+<li>
+<p>git init (dans le dossier courant que vous voulez relier)</p>
+</li>
+<li>
+<p>git checkout -b main</p>
+</li>
+<li>
+<p>git add test.txt</p>
+</li>
+<li>
+<p>git commit -m “test”</p>
+</li>
+<li>
+<p>git remote add origin “lien”</p>
+</li>
+<li>
+<p>git push -u origin main</p>
+</li>
+<li>
+<p>git add *</p>
+</li>
+<li>
+<p>git commit -m “la on commit tout le dossier”</p>
+</li>
+<li>
+<p>git push -u origin main</p>
+</li>
+</ul>
+<h2 id="préliminaire">1. Préliminaire</h2>
+<h2 id="configuration-globale-de-git">1.1. Configuration globale de git</h2>
+<blockquote>
+<p>Q1 : Qu’est-ce que le logiciel git-gui ? Comment se lance-t-il ?</p>
+</blockquote>
+<p>Git Gui est l’interface graphique pour Git. De ce fait, c’est un système de contrôle de version open source. Git Gui donne également une utilisation plus simple.</p>
+<p>Pour l’utiliser il faut entrer la commande dans le terminal “git init”</p>
+<blockquote>
+<p>Q2 : Qu’est-ce que le logiciel gitk ? Comment se lance-t-il ?</p>
+</blockquote>
+<p>Gitk est un outil graphique inclus avec le système de contrôle de version open source Git. Il est utilisé pour afficher l’historique de validation d’un référentiel Git. Gitk affiche également le graphique de validation. Il fournit également des informations détaillées sur chaque commit pour vérifier les differentes version par exemple.</p>
+<p>Pour le démarrer, vous devez utiliser la commande gitk dans un terminal, et il est préférable de mettre un &amp; à la fin.</p>
+<blockquote>
+<p>Q3 : Quelle sera la ligne de commande git pour utiliser par défaut le proxy de l’université sur tous vos projets git ?</p>
+</blockquote>
+<p>git config --global http.proxy [proxy].</p>
+<h2 id="installation-de-gitea">2. Installation de Gitea</h2>
+<blockquote>
+<p>Q1 : Qu’est-ce que Gitea ?</p>
+</blockquote>
+<p>Gitea est un logicielle de gestion de code source, libre en Go sous licence MIT, qui fournit un interface web, basé sur le logiciel de gestion de versions Git, pour la gestion du code source. Gitea permet de créer et de gérer des dépôts Git bien évidemment.</p>
+<blockquote>
+<p>Q2 : À quels logiciels bien connus dans ce domaine peut-on le comparer (en citer au moins 2) ?</p>
+</blockquote>
+<p>Github et Gitlab</p>
+<blockquote>
+<p>Q3 : Comment faire pour la mettre à jour sans devoir tout reconfigurer ? Essayez en mettant à jour vers la version 1.19.</p>
+</blockquote>
+<p>Il faut juste taper “systemctl restart gitea”.</p>
+</div>
+</body>
+
+</html>
